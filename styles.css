@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #df5f0b;
+  --secondary-color: #6c757d;
+  --font-family: Arial, sans-serif;
+}
+body {
+  font-family: Arial, sans-serif;
+
+  background: conic-gradient(at 62.5% 12.5%, #e6e6f1 25%, #0000 0)
+      calc(10px / -8) calc(10px / 2),
+    conic-gradient(at 62.5% 12.5%, #e6e6f1 25%, #0000 0) calc(-3 * 10px / 8)
+      calc(10px / 4),
+    conic-gradient(at 87.5% 62.5%, #e6e6f1 25%, #0000 0) calc(3 * 10px / 8)
+      calc(10px / 4),
+    conic-gradient(at 87.5% 62.5%, #e6e6f1 25%, #0000 0) calc(10px / -8) 0,
+    conic-gradient(at 25% 12.5%, #e6e6f1 25%, #0000 0) 0 calc(10px / -4),
+    conic-gradient(at 25% 12.5%, #e6e6f1 25%, #0000 0) calc(10px / -4) 0,
+    conic-gradient(at 87.5% 87.5%, #e6e6f1 25%, #0000 0) calc(10px / 8) 0
+      #d5d5d5;
+  background-size: 10px 10px;
+}
+/* nav bar */
+.navbar {
+  color: #130901;
+}
+
+.navbar-container {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.brand a {
+  color: #100101;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.nav-links.nav-active {
+  transform: translateX(0); /* Move the nav-links back to the screen */
+}
+.logo__nav {
+  width: 150px;
+  mix-blend-mode: darken;
+
+  height: 55px;
+}
+.contact__btn {
+  padding: 10px 30px;
+  background: rgb(220, 6, 6);
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: ease-in-out 0.5s transform;
+}
+.contact__btn:hover {
+  background-color: #df5f0b;
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.burger {
+  display: none; /* Initially hide for bigger screens */
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+/* main */
+/* main */
+.hero {
+  position: relative;
+  height: 90vh; /* Adjust as needed */
+  background-image: url("images/relax.png"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Adjust opacity (last value) as needed */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+.hero-title {
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.hero-sub-title {
+  color: var(--primary-color);
+  font-size: 50px;
+  margin: 20px 0px;
+}
+
+.hero-description {
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: auto;
+}
+
+.hero-contact {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn__contact {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  margin: 30px 0px;
+  width: 250px;
+  cursor: pointer;
+  transition: 0.3s ease transform;
+}
+
+.btn__contact:hover {
+  background-color: #f3f0ef;
+  color: rgb(20, 1, 1);
+  transform: scale(1.1);
+}
+
+/* main */
+/* main */
+
+/* master  */
+/* master  */
+.section__img__grid {
+  padding: 80px 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.master__img {
+  display: flex;
+}
+.sub__1__img {
+  margin: 25px 30px;
+  display: block;
+  border-radius: 10px;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+.image__lenghty {
+  margin: 20px;
+  height: 530px;
+  width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.section__info__grid {
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.section__info__grid h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.section__info__grid p {
+  font-size: 20px;
+  margin: 0px 0px;
+}
+.section__info__grid h1 span {
+  font-size: 50px;
+  color: var(--primary-color);
+}
+.section__info__grid button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  margin: 30px 0px;
+  width: 250px;
+  cursor: pointer;
+  transition: 0.3s ease transform;
+}
+
+.section__info__grid button:hover {
+  background-color: #f3f0ef;
+  color: rgb(20, 1, 1);
+  transform: scale(1.1);
+  border: 2px solid;
+}
+/* master  */
+/* master  */
+/* pattern */
+
+.pattern1 {
+  background: radial-gradient(
+        farthest-side at -33.33% 50%,
+        #0000 52%,
+        #d2d5e7 54% 57%,
+        #0000 59%
+      )
+      0 calc(40px / 2),
+    radial-gradient(
+        farthest-side at 50% 133.33%,
+        #0000 52%,
+        #d2d5e7 54% 57%,
+        #0000 59%
+      )
+      calc(40px / 2) 0,
+    radial-gradient(
+      farthest-side at 133.33% 50%,
+      #0000 52%,
+      #d2d5e7 54% 57%,
+      #0000 59%
+    ),
+    radial-gradient(
+      farthest-side at 50% -33.33%,
+      #0000 52%,
+      #d2d5e7 54% 57%,
+      #0000 59%
+    ),
+    #a4c5cc;
+  background-size: calc(40px / 4.667) 40px, 40px calc(40px / 4.667);
+}
+.pattern3 {
+  background: conic-gradient(at 62.5% 12.5%, #d5d5e6 25%, #0000 0)
+      calc(10px / -8) calc(10px / 2),
+    conic-gradient(at 62.5% 12.5%, #d5d5e6 25%, #0000 0) calc(-3 * 10px / 8)
+      calc(10px / 4),
+    conic-gradient(at 87.5% 62.5%, #d5d5e6 25%, #0000 0) calc(3 * 10px / 8)
+      calc(10px / 4),
+    conic-gradient(at 87.5% 62.5%, #d5d5e6 25%, #0000 0) calc(10px / -8) 0,
+    conic-gradient(at 25% 12.5%, #d5d5e6 25%, #0000 0) 0 calc(10px / -4),
+    conic-gradient(at 25% 12.5%, #d5d5e6 25%, #0000 0) calc(10px / -4) 0,
+    conic-gradient(at 87.5% 87.5%, #d5d5e6 25%, #0000 0) calc(10px / 8) 0
+      #73b2c1;
+  background-size: 10px 10px;
+}
+.pattern2 {
+  background: radial-gradient(
+        35.36% 35.36% at 100% 25%,
+        #0000 66%,
+        #d2d5e7 68% 70%,
+        #0000 72%
+      )
+      10px 10px / calc(2 * 10px) calc(2 * 10px),
+    radial-gradient(
+        35.36% 35.36% at 0 75%,
+        #0000 66%,
+        #d2d5e7 68% 70%,
+        #0000 72%
+      )
+      10px 10px / calc(2 * 10px) calc(2 * 10px),
+    radial-gradient(
+        35.36% 35.36% at 100% 25%,
+        #0000 66%,
+        #d2d5e7 68% 70%,
+        #0000 72%
+      )
+      0 0 / calc(2 * 10px) calc(2 * 10px),
+    radial-gradient(
+        35.36% 35.36% at 0 75%,
+        #0000 66%,
+        #d2d5e7 68% 70%,
+        #0000 72%
+      )
+      0 0 / calc(2 * 10px) calc(2 * 10px),
+    repeating-conic-gradient(#a4c5cc 0 25%, #0000 0 50%) 0 0 / calc(2 * 10px)
+      calc(2 * 10px),
+    radial-gradient(#0000 66%, #d2d5e7 68% 70%, #0000 72%) 0 calc(10px / 2) /
+      10px 10px #a4c5cc;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    right: -300px;
+    width: 70%; /* Adjust as needed */
+    background-color: #333;
+    padding: 10px 0;
+    overflow: hidden;
+    height: 100vh;
+    transition: all ease-in-out 1s;
+  }
+
+  .nav-links.nav-active {
+    right: 0;
+    transform: translateX(0);
+    transition: all ease-in-out 1s;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .burger {
+    display: block; /* Show burger icon for small screens */
+  }
+}
