@@ -19,44 +19,69 @@ navItems.forEach((item) => {
 
 // scroll
 
-const scrollContainers = document.querySelectorAll("#infiniteScroll--left");
+let items = document.querySelectorAll(".slider .list .item");
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+let thumbnail = document.querySelectorAll(".thumbnail .item");
 
-scrollContainers.forEach((container) => {
-  const scrollWidth = container.scrollWidth;
-  let isScrollingPaused = false;
+let countItem = items.length;
+let itemActive = 0;
 
-  window.addEventListener("load", () => {
-    self.setInterval(() => {
-      if (isScrollingPaused) {
-        return;
-      }
-      const first = container.querySelector("article");
+next.onclick = function () {
+  itemActive = itemActive + 1;
+  if (itemActive >= countItem) {
+    itemActive = 0;
+  }
+  showSlider();
+};
+prev.onclick = function () {
+  itemActive = itemActive - 1;
+  if (itemActive < 0) {
+    itemActive = countItem - 1;
+  }
+  showSlider();
+};
 
-      if (!isElementInViewport(first)) {
-        container.appendChild(first);
-        container.scrollTo(container.scrollLeft - first.offsetWidth, 0);
-      }
-      if (container.scrollLeft !== scrollWidth) {
-        container.scrollTo(container.scrollLeft + 1, 0);
-      }
-    }, 15);
+//auto run
+let refreshINterval = setInterval(() => {
+  next.click();
+}, 4000);
+function showSlider() {
+  //remove old style of current
+  let itemActiveOld = document.querySelector(".slider .list .item.active");
+  let thumbNailOld = document.querySelector(".thumbnail .item.active");
+  itemActiveOld.classList.remove("active");
+  thumbNailOld.classList.remove("active");
+
+  //active new item
+  items[itemActive].classList.add("active");
+  thumbnail[itemActive].classList.add("active");
+
+  //clear interval
+  clearInterval(refreshINterval);
+  refreshINterval = setInterval(() => {
+    next.click();
+  }, 5000);
+}
+
+//click on thumbnail
+thumbnail.forEach((thumbnail, index) => {
+  thumbnail.addEventListener("click", () => {
+    itemActive = index;
+    showSlider();
   });
+});
+gsap.registerPlugin(ScrollTrigger);
 
-  function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return rect.right > 0;
-  }
-
-  function pauseScrolling() {
-    isScrollingPaused = true;
-  }
-
-  function resumeScrolling() {
-    isScrollingPaused = false;
-  }
-  const allArticles = container.querySelectorAll("article");
-  for (let article of allArticles) {
-    article.addEventListener("mouseenter", pauseScrolling);
-    article.addEventListener("mouseleave", resumeScrolling);
-  }
+gsap.to(".info__header", {
+  x: 10,
+  duration: 2,
+});
+gsap.to(".navbar__menu", {
+  y: 10,
+  duration: 2,
+});
+gsap.to(".logo__button", {
+  y: 10,
+  duration: 2,
 });
