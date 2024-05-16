@@ -200,7 +200,7 @@ body {
 .hero {
   position: relative;
   height: 90vh; /* Adjust as needed */
-  background-image: url("./images/relax.png"); /* Add your background image */
+  background-image: url("./Images/relax.png"); /* Add your background image */
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -306,7 +306,7 @@ body {
   object-fit: cover;
 }
 .section__info__grid {
-  padding: 30px 50px;
+  padding: 30px 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -572,6 +572,7 @@ body {
 }
 .location__section iframe {
   border-radius: 10px;
+  width: 500px;
 }
 .master__plan {
   display: flex;
