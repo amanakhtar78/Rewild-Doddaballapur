@@ -71,17 +71,85 @@ thumbnail.forEach((thumbnail, index) => {
     showSlider();
   });
 });
-gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".info__header", {
-  x: 10,
-  duration: 2,
+//
+// number increase
+
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.5, // Intersection observer threshold (50% of target element is visible)
+};
+
+// Function to increment numbers gradually
+function increaseNumber(elementId, targetValue, duration) {
+  const element = document.getElementById(elementId);
+  const increment = Math.ceil(targetValue / (duration / 1000)); // Calculate increment per second
+  let currentValue = 0;
+  const interval = setInterval(() => {
+    currentValue += increment;
+    if (currentValue >= targetValue) {
+      currentValue = targetValue;
+      clearInterval(interval);
+    }
+    element.textContent = currentValue.toLocaleString(); // Format number with comma separators
+  }, 1000);
+}
+
+// Intersection observer callback function
+function handleIntersect(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      increaseNumber("acres", 40, 5); // From 0 to 40 in 5 seconds
+      increaseNumber("plots", 249, 8); // From 0 to 249 in 8 seconds
+      increaseNumber("amenities", 23, 10); // From 0 to 23 in 10 seconds
+      observer.unobserve(entry.target); // Stop observing after intersection
+    }
+  });
+}
+
+// Create an intersection observer
+const observer = new IntersectionObserver(handleIntersect, options);
+const target = document.querySelector(".trigger-text");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const enquiryButtons = document.querySelectorAll(".pop__up__button"); // Select all buttons with class "pop__up__button"
+  const enquiryPopup = document.getElementById("enquiryPopup");
+  const closePopup = document.getElementById("closePopup");
+
+  // Function to open the enquiry popup
+  function openPopup() {
+    enquiryPopup.style.display = "block";
+  }
+
+  // Function to close the enquiry popup
+  function closePopupFunction() {
+    enquiryPopup.style.display = "none";
+  }
+
+  // Event listener for enquiry buttons click
+  enquiryButtons.forEach((button) => {
+    button.addEventListener("click", openPopup);
+  });
+
+  // Event listener for closing the popup
+  closePopup.addEventListener("click", closePopupFunction);
+
+  // Automatically open the popup after 3 seconds
+  setTimeout(openPopup, 3000);
 });
-gsap.to(".navbar__menu", {
-  y: 10,
-  duration: 2,
-});
-gsap.to(".logo__button", {
-  y: 10,
-  duration: 2,
-});
+
+console.log("hhh");
+
+// call
+// Function to make a phone call
+function callNumber() {
+  const phoneNumber = "123456"; // Replace with your phone number
+  window.location.href = "tel:" + phoneNumber;
+}
+
+// Function to send an email
+function sendEmail() {
+  const emailAddress = "test@gmail.com"; // Replace with your email address
+  window.location.href = "mailto:" + emailAddress;
+}

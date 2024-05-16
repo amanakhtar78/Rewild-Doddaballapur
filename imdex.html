@@ -10,13 +10,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-i6Wep3N98pWZ5hETGQI7h1NbxTsqYBWTyX2IYIMmrbs1mC4AftooCxFWYNlaJ9Aa2n9ozEhwedBGltlJuYRXw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
   </head>
   <body>
     <!-- nav-bar -->
@@ -32,7 +25,9 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li>
-            <a href="#"><button class="contact__btn">Contact</button></a>
+            <a href="#"
+              ><button class="contact__btn pop__up__button">Contact</button></a
+            >
           </li>
         </ul>
         <div class="burger">
@@ -51,8 +46,12 @@
         </h2>
         <h2 class="hero-sub-title">Your Dream Home Awaits</h2>
         <p class="hero-description">
-          A stunning new development in the heart of the city. Luxury living at
+          A stunning new development @ Rewild Doddaballapur. Luxury living at
           its finest.
+        </p>
+        <p class="hero-description">
+          Each plot offers spaciousness and serenity, with a land size of 5800
+          sqft. Prices starting at 1.2 Cr onwards.
         </p>
 
         <div class="call__mail">
@@ -62,10 +61,35 @@
           <button onclick="sendEmail()">
             <i class="far fa-envelope"></i>
           </button>
-          <button class="btn__contact">More Info</button>
+          <button class="btn__contact pop__up__button" id="enquiryButton">
+            More Info
+          </button>
         </div>
       </div>
     </section>
+    <div id="enquiryPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" id="closePopup">&times;</span>
+        <h2>Enquiry Form</h2>
+        <!-- Add your enquiry form here -->
+        <form>
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="email">Phone:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <button type="submit" class="form__submit">Submit</button>
+        </form>
+      </div>
+    </div>
     <section class="section__img__grid">
       <aside>
         <div class="master__img">
@@ -78,7 +102,7 @@
       </aside>
       <aside class="section__info__grid">
         <h1>
-          Lorem ipsum dolor sit amet consectetur.
+          Lorem ipsum <br />
           <span>Lorem ipsum dolor sit.</span>
         </h1>
         <p>
@@ -87,9 +111,75 @@
           labore. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Suscipit, modi!
         </p>
+        <div class="container__land">
+          <div class="accers__land">
+            <i class="fas fa-tree"></i>
+            <!-- Example icon for Acres -->
+            <h3>Acres</h3>
+          </div>
+          <div class="accers__land">
+            <i class="fas fa-home"></i>
+            <!-- Example icon for Plots -->
+            <h3>Plots</h3>
+          </div>
+          <div class="accers__land">
+            <i class="fas fa-swimming-pool"></i>
+            <!-- Example icon for Amenities -->
+            <h3>Amenities</h3>
+          </div>
+        </div>
         <button>Read More</button>
       </aside>
     </section>
+    <!-- dimension -->
+    <section class="dimension">
+      <aside>
+        <h1>CAMPSITE CONFIGURATION</h1>
+        <table class="custom-table">
+          <tr>
+            <th>Type</th>
+            <th>Area</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>AEFERF</td>
+            <td>1,500 SQ.FT</td>
+            <td><button class="know-more">KNOW MORE</button></td>
+          </tr>
+          <tr>
+            <td>EFEW</td>
+            <td>1,900 SQ.FT</td>
+            <td><button class="know-more">KNOW MORE</button></td>
+          </tr>
+          <tr>
+            <td>AEFWEBC</td>
+            <td>2,300 SQ.FT</td>
+            <td><button class="know-more">KNOW MORE</button></td>
+          </tr>
+        </table>
+      </aside>
+      <aside class="rewild__contact">
+        <div><img src="./Images/Logo.png" alt="" /></div>
+        <form>
+          <div class="form__default">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label for="email">Phone:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+          <button type="submit" class="form__submit">Submit</button>
+        </form>
+      </aside>
+    </section>
+
     <!-- 
         services
      -->
@@ -133,7 +223,7 @@
       <!-- list items starts here -->
       <div class="list">
         <div class="item active">
-          <img src="./Images/relax.png" alt="" />
+          <img src="./Images/yard.png" alt="" />
 
           <div class="content">
             <p>Loremlor sit amet .</p>
@@ -197,7 +287,7 @@
       <!-- thumnail starts here -->
       <div class="thumbnail">
         <div class="item active">
-          <img src="./Images/relax.png" alt="" />
+          <img src="./Images/yard.png" alt="" />
         </div>
         <div class="item">
           <img src="./Images/rest.png" alt="" />
@@ -210,7 +300,49 @@
         </div>
       </div>
     </div>
+    <!-- locatoon -->
+    <section class="location__start">
+      <h1 class="facility__text">Discover Our <span>Location</span></h1>
+      <section class="location__section">
+        <aside class="master__plan">
+          <h1>
+            M <br />
+            A<br />S<br />T<br />E<br />R<br />
+          </h1>
+          <div>
+            <h1 class="plan__text">PLAN</h1>
+            <img src="./Images/plotMasterPlan.png" alt="" />
+          </div>
+        </aside>
+        <aside>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62127.22016104495!2d77.4953975944875!3d13.290985270454234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb1de38e96323a3%3A0xbf906b32e5d81163!2sDoddaballapura%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1715851259352!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </aside>
+      </section>
+    </section>
     <!-- scroll end -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>All Rights Reserved &copy; 2024</p>
+        <p>Connect with us:</p>
+        <div class="social-icons">
+          <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+          <!-- Add more social media icons as needed -->
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon">
+      <i class="fab fa-whatsapp"></i>
+    </a>
     <script src="/script.js"></script>
   </body>
 </html>
