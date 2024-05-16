@@ -6,6 +6,17 @@
     <title>Rewild</title>
     <link rel="icon" type="image/x-icon" href="./Images/Logo.png" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-i6Wep3N98pWZ5hETGQI7h1NbxTsqYBWTyX2IYIMmrbs1mC4AftooCxFWYNlaJ9Aa2n9ozEhwedBGltlJuYRXw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- nav-bar -->
@@ -44,7 +55,15 @@
           its finest.
         </p>
 
-        <button class="btn__contact">More Info</button>
+        <div class="call__mail">
+          <button onclick="callNumber()">
+            <i class="fas fa-phone-alt"></i>
+          </button>
+          <button onclick="sendEmail()">
+            <i class="far fa-envelope"></i>
+          </button>
+          <button class="btn__contact">More Info</button>
+        </div>
       </div>
     </section>
     <section class="section__img__grid">
@@ -71,6 +90,45 @@
         <button>Read More</button>
       </aside>
     </section>
+    <!-- 
+        services
+     -->
+    <h1 class="facility__text">Discover Our <span>Facilities</span></h1>
+    <section class="services-section">
+      <div class="service">
+        <i class="fas fa-shield-alt"></i>
+        <h3>24/7 Security</h3>
+        <p>Secure and monitored premises for peace of mind.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-hand-holding-water"></i>
+        <h3>Luxurious Spa</h3>
+        <p>Relax and rejuvenate with exclusive spa facilities.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-swimming-pool"></i>
+        <h3>Infinity Pool</h3>
+        <p>Experience the epitome of luxury with a stunning infinity pool.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-tree"></i>
+        <h3>Lush Greenery</h3>
+        <p>Surround yourself with beautiful landscaping and gardens.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-child"></i>
+        <h3>Playground</h3>
+        <p>Safe and fun play areas for children.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-golf-ball"></i>
+        <h3>Golf Course</h3>
+        <p>Enjoy leisurely rounds of golf in a picturesque setting.</p>
+      </div>
+      <!-- Add more services as needed -->
+    </section>
+    <!-- scroll -->
+
     <script src="/script.js"></script>
   </body>
 </html>
